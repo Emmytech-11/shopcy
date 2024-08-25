@@ -1,11 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import { Content } from 'next/font/google'
+import Container from '@/components/container/Container'
 
 const Hero = () => {
   return (
-    <section className='pt-32'>
-        <div className='container  h-72 flex justify-between items-center text-white bg-secondary-500'>
+    <section className='pt-32 pb-5'>
+      <Container>
+        <div className='h-72 flex justify-between items-center text-white bg-secondary-500'>
         <div className='flex flex-1 md:flex-none justify-between md:justify-start items-center gap-8 '>
             <Image
             width={100}
@@ -35,6 +37,7 @@ const Hero = () => {
           src="/assets/homeGraphic3.png" alt="Banner black image" />
         </div>
         </div>
+        </Container>
     </section>
   )
 }

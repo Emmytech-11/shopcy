@@ -6,6 +6,8 @@ import { BsCart3 } from 'react-icons/bs'
 import Badge from '../badge/Badge'
 import { MdClose } from 'react-icons/md';
 import { RxHamburgerMenu } from 'react-icons/rx';
+import Container from '../container/Container'
+
 
 const itemStyle = `
         relative before:content-[""] before:w-[80%] before:h-1 
@@ -22,7 +24,8 @@ const Navbar = () => {
   
   return (
   <header className='fixed w-full py-5 z-40 text-white bg-primary-700'>
-    <div className='container flex justify-between items-center gap-5'>
+    <Container>
+    <div className='flex justify-between items-center gap-5'>
       <div className='z-10 md:hidden' onClick={() => setShowMenu(!showMenu)}>
         {showMenu ? <MdClose size={30} /> : <RxHamburgerMenu size={30} />}
       </div>
@@ -43,7 +46,7 @@ const Navbar = () => {
         </form>
       </div>
       <div className='flex items-center gap-5'>
-      <nav className={`w-full md:w-auto h-screen md:h-auto absolute md:static   top-0  
+      <nav className={`w-full md:w-auto h-screen md:h-auto absolute md:static top-0  
       bg-secondary-500 md:bg-transparent transition-all duration-300 ease-in 
       ${showMenu ? "left-0" : "left-[-100%]"}`}>
         <ul className='mt-24 md:mt-0 px-5 md:px-0 flex flex-col md:flex-row md:items-center
@@ -67,6 +70,7 @@ const Navbar = () => {
        
       </div>
       </div>
+      </Container>
   </header>
   )
 }
