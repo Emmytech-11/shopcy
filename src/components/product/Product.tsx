@@ -1,22 +1,27 @@
 import React from 'react'
 import Image from 'next/image'
 import Button from '../button/Button'
-import { IItem } from "@/types";
+import { IItem } from '@/types';
+
 
 
 
 
 interface productProps {
     item: IItem;
+    showBlackButton? : boolean;
+    objectCover? : boolean;
        
     
 }
 
-const Product = ({ item }: productProps) => {
+const Product = ({ item, showBlackButton, objectCover }: productProps) => {
   return (
-    <div className='w-full p-5 bg-secondary-200'>
+    <div className='flex-1 shadow-lg bg-secondary-200'>
         <div className='w-full h-52 relative'>
-            <Image fill src={item.img} alt="product image" />
+            <Image fill src={item.img} alt="product image"
+            className={objectCover ? "object-cover" : "object-contain"}
+             />
             </div>
             <div className='w-full py-5'>
                 <div className='flex justify-between gap-2'>
@@ -28,7 +33,7 @@ const Product = ({ item }: productProps) => {
                  </span>
                  <div className='flex justify-between gap-2 mt-2'>
                     <Button type='primary' size='small'>More Details</Button>
-                    <Button type='neutral' size='small'>Add To Cart</Button>
+                    {showBlackButton && <Button type='neutral' size='small'>Add To Cart</Button>}
                  </div>
                 </div>
            </div>

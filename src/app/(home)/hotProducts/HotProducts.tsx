@@ -115,8 +115,7 @@ const HotProducts = () => {
           </div>
           </div>
         <div className='w-full md:w-[80%]'>
-
-        <Swiper
+          <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination,]}
       spaceBetween={20}
@@ -140,7 +139,7 @@ const HotProducts = () => {
     >
        {products.map((item) => (
          <SwiperSlide key={item.id}>
-           <Product item ={item} />
+           <Product item ={item} showBlackButton objectCover />
          </SwiperSlide>
           ))}
           </Swiper>
